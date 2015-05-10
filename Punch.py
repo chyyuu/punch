@@ -1,4 +1,6 @@
-'''
+#!/usr/bin/env python
+# -*- encoding: utf8 -*-
+"""
 Created on Mar 5, 2009
 
 @author: Keith Lawless (keith at keithlawless dot com)
@@ -17,8 +19,7 @@ Created on Mar 5, 2009
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-'''
+"""
 from os.path import abspath, exists, join
 from os import pathsep, getenv
 import cPickle
@@ -103,9 +104,9 @@ class Punch(object):
     def parse_config(self):
         """Parse the user's todo.cfg file and place the elements into a dictionary"""
         try:
-            paths = [ getenv("HOME"), "."]
-            files = [ "todo.cfg", ".todo.cfg" ]
-	    if getenv("TODOTXT_CFG_FILE") == None:
+            paths = [ "/home/chyyuu/.todo/"]
+            files = [ "config" ]
+            if getenv("TODOTXT_CFG_FILE") == None:
                 configFileName = self.search_file(files, paths)
             else:
                 configFileName = getenv("TODOTXT_CFG_FILE")
